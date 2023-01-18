@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega Final</title>
+    
+    <!-- ESTILOS CSS -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- BOOTSTRAP CSS 4.6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!--PLUGINS DE CSS-->
+
+    <!-- SweetAlert 2 -->
+    <link rel="plugins/sweetalert2/sweetalert2.min.css">
+
+    <!--PLUGINS DE JAVASCRIPT-->
+
+    <!-- SweetAlert 2 -->
+    <script src="plugins/sweetalert2/sweetalert2.all.js"></script>
+    <!-- By default SweetAlert2 doesn't support IE. To enable IE 11 support, include Promise polyfill:-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+</head>
+
+<body>
+
+    <!-- PLANTILLA DE INICIO -->
+    <section class="content__plantilla">
+        
+        <section class="content__button">
+            <!-- logo -->
+            <div class="content__logo">
+                <nav class="navbar navbar-light logo ">
+                    <a class="navbar-brand" href="#">CREDIT</a>
+                </nav>
+            </div>
+
+            <div class="content__button-text .text-monospace">
+                <h1>La plata que necesitás, 
+                    para hacer los que querés. </h1>
+            </div>
+            
+            <div class="content__button-btn rounded-pill">
+                <a href="#content__datos" class="btn">Quiero mi préstamo</a>
+            </div>
+
+        </section>
+
+    </section>
+    
+
+
+    <!-- CARDS-->
+    <section class="content__datos"> 
+        <a name="content__datos"></a>
+
+        <div class="content__datos-width">
+
+            <div class="content__datos-title">
+                <h2>Tu préstamo online, simple e inmediato</h2>
+            </div>
+
+            <div class="content__datos-suntitle">
+                <h3>Completa los siguientes datos...</h3>
+            </div>
+
+            <div class="content__datos-cards">
+
+                <!-- NOMBRE - APELLIDO - DNI -->
+                <div class="card mb-3 datos-card shadow bg-white rounded" id="cardNomApe">
+                    <div class="card-header">Ingresa tu documento, nombre y apellido</div>
+                    <div class="card-body">
+
+                        <label for="nombre"> DNI: </label>
+                        <input type="number" name="DNI" id="DNI" required>
+
+                        <label for="nombre"> Nombre: </label>
+                        <input type="text" name="nombre" id="nombre" required>
+
+                        <label for="apellido"> apellido: </label>
+                        <input type="text" name="apellido" id="apellido" required>
+
+                        <div>
+                            <a href="#" id="NomApe">Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDAD -->
+                <div class="card mb-3 datos-card shadow bg-white rounded filter" id="cardEdad">
+                    <div class="card-header">Ingresa tu edad</div>
+                    <div class="card-body">
+                        <label for="edad"> Edad: </label>
+                        
+                        <input type="number" name="edad" id="edad" disabled>
+                        
+                        <P>Debes ser mayor de 18 años.</P>
+
+                        <div>
+                            <a href="#" id="Edad" disabled>Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="card mb-3 datos-card shadow bg-white rounded filter" id="cardEmail">
+                    <div class="card-header">Ingresa un email por favor</div>
+                    <div class="card-body">
+                        <label for="email"> Email: </label>
+                            <input type="email" name="email" id="email" placeholder="ej: pedro@gmail.com" disabled>
+                        <div>
+                            <a href="#" id="Email" disabled>Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BANCO -->
+                <div class="card mb-3 datos-card shadow bg-white rounded filter" id="cardBanco">
+                    <div class="card-header">Ingresa tu Banco</div>
+                    <div class="card-body">
+                        <label for="banco"> Seleccione el banco con el que opera por favor: </label>
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="banco" disabled>
+                                <option value = 0 selected disabled>Seleccionar banco</option>                                
+                            </select>
+                        </div>                        
+                        <div>
+                            <a href="#" id="Bancos" disabled>Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUOTAS -->
+                <div class="card mb-3 datos-card shadow bg-white rounded filter" id="cardCuotas">
+                    <div class="card-header">Cantidad de cuotas a devolver el crédito</div>
+                    <div class="card-body">
+                        <label for="cuota"> Cuotas: </label>
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="cuota" disabled>
+                                <option value= 0 selected disabled>Seleccione cantidad de cuotas</option>
+                                
+                            </select>
+                        </div>
+                        <P>Podras elegir entre 3, 6 y 12 cuotas.</P>
+                        <div>
+                            <a href="#" id="Cuotas" disabled>Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONTO A SOLICITAR -->
+                <div class="card mb-3 datos-card shadow bg-white rounded filter" id="cardMonto">
+                    <div class="card-header">Ingresa el monto que desees solicitar</div>
+                    <div class="card-body">
+                        <label for="monto"> Cantidad a solicitar: </label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                            </div>
+                            <input type="number" id="monto" class="form-control" disabled>
+                        </div>
+                        <P>Desde $10.000 hasta $100.000</P>
+                        <div class="content__button-btn rounded-pill" style="margin-bottom: 2em">
+                            <button id="submit" class="btn" data-bs-toggle="resultadoModal" disabled>Enviar datos</button>
+                        </div>                        
+                    </div>
+                </div>              
+                
+            </div>
+
+        </div>
+        
+        <!--MODAL / SACARLO POR js-->
+        <div class="modal fade" role="dialog" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        Gracias ..... el crédito que solicitastaste por $.. a devolver en cuotas ... a depositar en el Banco ... ah sido preaprobado. 
+                        <br>
+                        <br>
+
+                        EN BREVE NOS COMUNICAREMOS CON USTED!!!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="content__button-btn rounded-pill" data-dismiss="modal">Salvar datos</button>
+                    </div>
+                </div>
+            </div>
+        </div>       
+
+    </section>
+
+    <!-- BOOTSTRAP JS 4.6 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
